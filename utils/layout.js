@@ -1,5 +1,5 @@
 export function mapProductToCard(product) {
-    return `
+  return `
           <div class="card flex-col  items-center justify-around gap-20">
               <div class="info  flex-col items-center gap-20">
                   <div class="img">
@@ -13,5 +13,20 @@ export function mapProductToCard(product) {
               <button class="add-to-cart">Adauga in cos</button>
           </div>
       `;
-  }
-  
+}
+export function mapProductToAdminTableRow(product) {
+  return `
+          <tr>
+              <td>${product.name}</td>
+              <td>${product.price}</td>
+              <td><img width="50px" src=${product.imageURL} /></td>
+              <td>${product.details} </td>
+              <td>
+                  <button class="edit-btn" data-productId=${product.id}>Edit</button>
+              </td>
+              <td>
+                  <button class="delete-btn" data-productId=${product.id}>Delete</button>
+              </td>
+          </tr>
+      `;
+}
